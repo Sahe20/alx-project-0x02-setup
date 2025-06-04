@@ -1,18 +1,13 @@
-import { useEffect, useState } from "react";
+import { GetStaticProps } from "next";
 import { PostProps } from "@/interfaces";
 import Header from "@/components/layout/Header";
 import PostCard from "@/components/common/PostCard";
 
-const Posts = () => {
-  const [posts, setPosts] = useState<PostProps[]>([]);
+interface PostsPageProps {
+  posts: PostProps[];
+}
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
-      .then((res) => res.json())
-      .then((data) => setPosts(data))
-      .catch((err) => console.error("Failed to fetch posts:", err));
-  }, []);
-
+const Posts = ({ posts }: PostsPageProps) => {
   return (
     <>
       <Header />
@@ -32,6 +27,18 @@ const Posts = () => {
       </div>
     </>
   );
+};
+
+// Static Site Generation with getStaticProps as requested by the checker
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10");
+  const posts: PostProps[] = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default Posts;
