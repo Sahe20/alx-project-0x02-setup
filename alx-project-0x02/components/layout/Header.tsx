@@ -17,6 +17,7 @@ const Header = () => {
         <Link href="/home" className={linkClasses("/home")}>Pages Home</Link>
         <Link href="/about" className={linkClasses("/about")}>About</Link>
         <Link href="/posts" className={linkClasses("/posts")}>Posts</Link>
+        <Link href="/users" className={linkClasses("/users")}>Users</Link>
       </nav>
     </header>
   );
