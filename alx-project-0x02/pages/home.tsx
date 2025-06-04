@@ -27,8 +27,9 @@ const Home = () => {
   };
 
   return (
+
     <div className="p-8 space-y-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Home Page</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">Pages Home Page</h1>
 
       <div className="flex justify-center">
         <button
