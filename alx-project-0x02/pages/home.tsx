@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
+import Header from "@/components/layout/Header";
 
 interface Post {
   title: string;
@@ -27,7 +28,8 @@ const Home = () => {
   };
 
   return (
-
+  <>
+    <Header />
     <div className="p-8 space-y-6">
       <h1 className="text-3xl font-bold text-center mb-6">Pages Home Page</h1>
 
@@ -52,6 +54,7 @@ const Home = () => {
         onSubmit={handleAddPost}
       />
     </div>
+  </>
   );
 };
 

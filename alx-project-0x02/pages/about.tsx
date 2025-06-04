@@ -1,8 +1,10 @@
 import Button from "@/components/common/Button";
+import Header from "@/components/layout/Header";
 
 const About = () => {
   return (
-    
+    <>
+      <Header />
     <div className="p-8 space-y-6">
       <h1 className="text-3xl font-bold text-center mb-6">About Page</h1>
 
@@ -12,7 +14,7 @@ const About = () => {
         <Button label="Large Button" size="large" shape="rounded-full" />
       </div>
     </div>
-    
+    </>
   );
 };
 
